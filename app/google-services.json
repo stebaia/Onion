@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "836231922783",
+    "project_id": "onion-673dd",
+    "storage_bucket": "onion-673dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836231922783:android:08b5064a2732a5cf6947ea",
+        "android_client_info": {
+          "package_name": "com.sbaiardi.onion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836231922783-e59e2midiirjaopvt8g0gubm9i8je5p6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCj1KriGF8wNlNaR7xN5XGaTFxIfCKfjO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836231922783-e59e2midiirjaopvt8g0gubm9i8je5p6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

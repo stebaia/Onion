@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_home"
+        android:title="Dati"
+        android:icon="@drawable/ic_round_show_chart_24">
+    </item>
+    <item android:id="@+id/nav_news"
+        android:title="News"
+        android:icon="@drawable/ic_baseline_list_alt_24">
+    </item>
+    <item android:id="@+id/nav_Regione"
+        android:title="Stato Regionale"
+        android:icon="@drawable/ic_round_map_24">
+    </item>
+    <item android:id="@+id/nav_info"
+        android:title="Info"
+        android:icon="@drawable/ic_round_info_24">
+    </item>
+</menu>

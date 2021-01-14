@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:background="@color/immuni"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.view.MainFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Dati Covid-19"
+            android:textColor="@color/grey_500"></TextView>
+        <RelativeLayout
+
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="-30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Andamento Nazionale"
+                android:textColor="@color/black_87"
+                android:textSize="26dp"
+                android:textStyle="bold"></TextView>
+            <LinearLayout
+                android:background="@drawable/bottom_navigation_bar"
+                android:layout_marginRight="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_margin="4dp"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_colored"
+
+
+
+                    android:src="@drawable/ic_round_place_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></ImageView>
+
+            </LinearLayout>
+            </RelativeLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+
+                android:layout_weight="3"
+                android:background="@drawable/button_rounded_colored"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Stato"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="3"
+                android:background="@drawable/button_rounded_uncolored"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Mese"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="3"
+                android:background="@drawable/button_rounded_uncolored"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Settimana"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
+            <RelativeLayout
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/bottom_navigation_bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_margin="4dp"
+                    android:padding="4dp"
+                    android:background="@drawable/button_rounded_colored"
+                    android:src="@drawable/ic_round_calendar_today_24"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"></ImageView>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/linear_percentage"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_positive_percentage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="0%"
+                            android:textColor="@color/black_87"
+                            android:textSize="32dp">
+
+                        </TextView>
+                        <TextView
+                            android:textColor="@color/grey_500"
+                            android:fontFamily="@font/poppins_bold"
+                            android:layout_marginTop="-10dp"
+                            android:text="Percentuale positivi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TextView>
+
+                    </LinearLayout>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:visibility="gone"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/linear_percentage"
+                        android:id="@+id/animationViewUpPercentage"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:lottie_fileName="arrow_up_red.json"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"/>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:visibility="gone"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/linear_percentage"
+                        android:id="@+id/animationViewDownPercentage"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:lottie_fileName="arrow_down_green.json"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/linear_tamponi"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_tamponi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="0"
+                            android:textColor="@color/black_87"
+                            android:textSize="32dp">
+
+                        </TextView>
+                        <TextView
+                            android:textColor="@color/grey_500"
+                            android:fontFamily="@font/poppins_bold"
+                            android:layout_marginTop="-10dp"
+                            android:text="Tamponi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TextView>
+
+                    </LinearLayout>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/linear_tamponi"
+                        android:id="@+id/animationViewUpTamponi"
+                        android:layout_width="60dp"
+                        android:visibility="gone"
+                        android:layout_height="60dp"
+                        app:lottie_fileName="arrow_up.json"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"/>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:visibility="gone"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/linear_tamponi"
+                        android:id="@+id/animationViewDownTamponi"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:lottie_fileName="arrow_down.json"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/linear_positivi"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_positive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="0"
+                            android:textColor="@color/black_87"
+                            android:textSize="32dp">
+
+                        </TextView>
+                        <TextView
+                            android:textColor="@color/grey_500"
+                            android:fontFamily="@font/poppins_bold"
+                            android:layout_marginTop="-10dp"
+                            android:text="Positivi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TextView>
+
+                    </LinearLayout>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:visibility="gone"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/linear_positivi"
+                        android:id="@+id/animationViewUpPositive"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:lottie_fileName="arrow_up_red.json"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"/>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:visibility="gone"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/linear_positivi"
+                        android:id="@+id/animationViewDownPositive"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:lottie_fileName="arrow_down_green.json"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"/>
+                    <RelativeLayout
+                        android:layout_alignParentBottom="true"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_aggiornamento_dati"
+                            android:textSize="12dp"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/grey_800"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="Dati aggiornati alle 17 del 10/01/2020"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TextView>
+
+
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    app:cardCornerRadius="50dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="12dp"
+                    android:layout_margin="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+                    <LinearLayout
+                        android:layout_margin="30dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_marginBottom="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:textColor="@color/grey_700"
+                                android:fontFamily="@font/poppins_bold"
+
+                                android:text="Grafico su percentuale"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"></TextView>
+                            <LinearLayout
+                                android:background="@drawable/bottom_navigation_bar"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_margin="4dp"
+                                android:padding="3dp"
+                                android:background="@drawable/button_rounded_colored"
+                                android:src="@drawable/ic_round_show_chart_24"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"></ImageView>
+                            </LinearLayout>
+                        </RelativeLayout>
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </com.github.mikephil.charting.charts.LineChart>
+                        <HorizontalScrollView
+                        android:visibility="gone"
+                        android:layerType="software"
+                        android:id="@+id/scroll_linechart"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.db.williamchart.view.LineChartView
+                            android:id="@+id/lineCharts"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:chart_gridEffect="dotted"
+                            app:chart_labelsColor="@color/violaScuro"
+                            app:chart_labelsFont="@font/poppins_bold"
+                            app:chart_labelsSize="10sp"
+                            app:chart_lineColor="@color/colorPrimary"
+                            app:chart_lineThickness="3dp"
+                            app:chart_smoothLine="false" />
+                    </LinearLayout>
+                    </HorizontalScrollView>
+                        <com.db.williamchart.view.BarChartView
+                            android:visibility="gone"
+                            android:id="@+id/barChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:chart_axis="x"
+                            app:chart_barsColor="@color/colorPrimary"
+                            app:chart_barsRadius="10dp"
+                            app:chart_labelsColor="@color/violaScuro"
+                            app:chart_labelsFont="@font/poppins_bold"
+                            app:chart_labelsSize="10sp"
+                            app:chart_spacing="15dp"
+                            />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <include layout="@layout/bottom_sheet_cases_layout"></include>
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </LinearLayout>
+        </ScrollView>
+        
+
+
+
+
+
+</LinearLayout>
