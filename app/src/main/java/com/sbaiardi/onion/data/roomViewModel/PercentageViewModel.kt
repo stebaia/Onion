@@ -13,7 +13,9 @@ public class PercentageViewModel(private val repo: PercentagesRepo): ViewModel()
         repo.insert(per)
     }
 
-
+    fun insertAll(pers: ArrayList<Percentages>) = viewModelScope.launch {
+        repo.insertAll(pers)
+    }
 }
 
 public class PercentageViewModelFactory(private val repository: PercentagesRepo) : ViewModelProvider.Factory {

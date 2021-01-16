@@ -1,4 +1,4 @@
-package com.sbaiardi.onion.utils.charts.markers
+package com.sbaiardi.onion.utils.chart.marker
 
 import android.content.Context
 import android.widget.TextView

@@ -52,7 +52,7 @@ abstract class AppDatabase :RoomDatabase() {
                         context.applicationContext,
                         AppDatabase::class.java,
                         "covid_db"
-                    ).addCallback(PercentageDatabaseCallback(scope)).build()
+                    ).addCallback(PercentageDatabaseCallback(scope)).allowMainThreadQueries().build()
                     INSTANCE = instance
                     // return instance
                     instance

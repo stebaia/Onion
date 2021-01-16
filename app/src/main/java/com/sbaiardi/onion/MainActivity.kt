@@ -18,13 +18,9 @@ import com.sbaiardi.onion.utils.Status
 import kotlinx.android.synthetic.main.main_activity.*
 
 
-const val ONESIGNAL_APP_ID = "8039cf0f-9a09-4537-8763-23f9c007a446"
+
 
 class MainActivity : AppCompatActivity() {
-
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,23 +28,12 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
 
         }
-
-
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, MainFragment.newInstance())
             .commitNow()
 
         navigationView.setItemSelected(R.id.nav_home)
 
-        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE)
-
-        // OneSignal Initialization
-        OneSignal.initWithContext(this)
-        OneSignal.setAppId(ONESIGNAL_APP_ID)
-
-
-        //setupViewModel()
-        //setupObservers()
     }
 
 

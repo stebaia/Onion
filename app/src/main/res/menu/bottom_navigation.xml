@@ -4,14 +4,19 @@
         android:title="Dati"
         android:icon="@drawable/ic_round_show_chart_24">
     </item>
-    <item android:id="@+id/nav_news"
-        android:title="News"
+    <item android:id="@+id/nav_elenco"
+        android:title="Andamento"
         android:icon="@drawable/ic_baseline_list_alt_24">
     </item>
     <item android:id="@+id/nav_Regione"
         android:title="Stato Regionale"
         android:icon="@drawable/ic_round_map_24">
     </item>
+    <item android:id="@+id/nav_news"
+        android:title="News"
+        android:icon="@drawable/ic_baseline_event_note_24">
+    </item>
+
     <item android:id="@+id/nav_info"
         android:title="Info"
         android:icon="@drawable/ic_round_info_24">

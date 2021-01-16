@@ -3,4 +3,10 @@
     <resources xmlns:tools="http://schemas.android.com/tools">
         <dimen name="design_bottom_navigation_item_max_width" tools:override="true">100dp</dimen>
         <dimen name="design_bottom_navigation_active_item_max_width" tools:override="true">100dp</dimen>
-    </resources>
+        <dimen name="ten_dp">10dp</dimen>
+        <dimen name="single_and_half_margin">24dp</dimen>
+        <dimen name="triple_margin">48dp</dimen>
+        <dimen name="double_margin">32dp</dimen>
+        <dimen name="half_margin">8dp</dimen>
+        <dimen name="single_margin">16dp</dimen>
+</resources>
