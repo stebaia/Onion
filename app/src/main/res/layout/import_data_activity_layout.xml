@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/immuni"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.airbnb.lottie.LottieAnimationView
+
+        android:layout_centerInParent="true"
+        android:id="@+id/download_info_progress"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:lottie_fileName="download_anim.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+    <TextView
+        android:textColor="@color/black_54"
+        android:layout_centerHorizontal="true"
+        android:text="Download dei dati del covid"
+        android:layout_below="@+id/download_info_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+</RelativeLayout>

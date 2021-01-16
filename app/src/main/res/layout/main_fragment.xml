@@ -44,6 +44,7 @@
                 android:textSize="26dp"
                 android:textStyle="bold"></TextView>
             <LinearLayout
+
                 android:background="@drawable/bottom_navigation_bar"
                 android:layout_marginRight="30dp"
                 android:layout_centerVertical="true"
@@ -109,19 +110,22 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
             <RelativeLayout
+
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@drawable/bottom_navigation_bar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
+
                 <ImageView
+                    android:padding="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_margin="4dp"
-                    android:padding="4dp"
                     android:background="@drawable/button_rounded_colored"
-                    android:src="@drawable/ic_round_calendar_today_24"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"></ImageView>
+                    android:src="@drawable/ic_baseline_arrow_drop_down_24"></ImageView>
+
             </RelativeLayout>
 
 
@@ -311,7 +315,10 @@
                     app:cardCornerRadius="50dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardElevation="12dp"
-                    android:layout_margin="40dp"
+                    android:layout_marginBottom="80dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
                     android:layout_width="match_parent"
                     android:layout_height="300dp">
                     <LinearLayout
@@ -325,6 +332,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:layout_centerVertical="true"
                                 android:textColor="@color/grey_700"
                                 android:fontFamily="@font/poppins_bold"
 
@@ -337,14 +345,29 @@
                                 android:layout_alignParentEnd="true"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
-                            <ImageView
-                                android:id="@+id/img_graph_choise"
-                                android:layout_margin="4dp"
-                                android:padding="3dp"
-                                android:background="@drawable/button_rounded_colored"
-                                android:src="@drawable/ic_round_show_chart_24"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"></ImageView>
+                                <LinearLayout
+                                    android:layout_margin="4dp"
+                                    android:background="@drawable/button_rounded_colored"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:visibility="gone"
+
+                                        android:layout_gravity="center"
+                                        android:padding="3dp"
+
+                                        android:src="@drawable/ic_round_show_chart_24"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"></ImageView>
+
+                                <ImageView
+                                    android:id="@+id/img_graph_choise"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"></ImageView>
+
+                                </LinearLayout>
                             </LinearLayout>
                         </RelativeLayout>
                         <com.github.mikephil.charting.charts.LineChart
