@@ -7,7 +7,14 @@ import kotlinx.coroutines.launch
 
 public class PercentageViewModel(private val repo: PercentagesRepo): ViewModel() {
 
+
+
+
     val allPer: LiveData<List<Percentages>> = repo.allPercentages.asLiveData()
+
+    val filterWeek: LiveData<List<Percentages>> = repo.filterWeekPercentages.asLiveData()
+
+    val filterMonth: LiveData<List<Percentages>> = repo.filterMonthPercentages.asLiveData()
 
     fun insert(per: Percentages) = viewModelScope.launch {
         repo.insert(per)

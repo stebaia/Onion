@@ -10,6 +10,10 @@ class PercentagesRepo(private val perDao: PercentageDao) {
 
     val allPercentages : Flow<List<Percentages>> = perDao.getAllPercentages()
 
+    val filterWeekPercentages : Flow<List<Percentages>> = perDao.getLastWeekPercentage()
+
+    val filterMonthPercentages : Flow<List<Percentages>> = perDao.getLastMonthPercentage()
+
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun insert(per: Percentages) {

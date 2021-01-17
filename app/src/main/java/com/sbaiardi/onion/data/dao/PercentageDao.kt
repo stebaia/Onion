@@ -15,6 +15,12 @@ interface PercentageDao {
     @Query("SELECT * FROM percentages")
     fun getAllPercentages() : Flow<List<Percentages>>
 
+    @Query("SELECT * FROM percentages ORDER BY data DESC LIMIT 7")
+    fun getLastWeekPercentage() : Flow<List<Percentages>>
+
+    @Query("SELECT * FROM percentages ORDER BY data DESC LIMIT 30")
+    fun getLastMonthPercentage() : Flow<List<Percentages>>
+
     @Query("SELECT * FROM percentages WHERE data =:data")
     fun getPercentage(data: String?): LiveData<Percentages>
 

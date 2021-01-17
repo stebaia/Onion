@@ -1,6 +1,7 @@
 package com.sbaiardi.onion.utils.chart
 
 import android.content.Context
+import android.widget.TextView
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
@@ -13,8 +14,10 @@ class ChartUtils {
 
     companion object {
         public fun setLineChart(
+            type: Int,
             percentages: List<Percentages>,
             lineChart: LineChart,
+            text: TextView,
             context: Context?
         ) {
 
@@ -26,11 +29,23 @@ class ChartUtils {
             entries.add(Entry(5f, 16f))*/
 
             val entries = ArrayList<Entry>()
+
             for ((index, percentage) in percentages.withIndex()) {
-
-                entries.add(Entry(index.toFloat(), percentage.positive_percentage.toFloat()))
+                when (type) {
+                    1 -> {
+                        entries.add(Entry(index.toFloat(), percentage.positive_percentage.toFloat()))
+                        text.text = "Grafico su percentuale"
+                    }
+                    2 -> {
+                        entries.add(Entry(index.toFloat(), percentage.n_positivi.toFloat()))
+                        text.text = "Grafico sui positivi"
+                    }
+                    3 -> {
+                        entries.add(Entry(index.toFloat(), percentage.n_tamponi.toFloat()))
+                        text.text = "Grafico su tamponi"
+                    }
+                }
             }
-
 
             val lineDataSet = LineDataSet(entries, "Cells")
             lineDataSet.setDrawValues(false)

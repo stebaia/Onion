@@ -41,12 +41,28 @@ class CustomDialog {
                 //Pop In and Pop Out Animation yet pending
 //            alert.window?.attributes?.windowAnimations = R.style.SlidingDialogAnimation
                 alert.show()
+
                 return alert
             }
         }
     }
 
-    /***
+    fun AlertDialog.close(
+        title: String,
+        fontStyle: Typeface? = null,
+        titleColor: Int = 0
+    ): AlertDialog {
+        this.title_head.text = title.trim()
+        if (fontStyle != null) {
+            this.title_head.typeface = fontStyle
+        }
+        if (titleColor != 0) {
+            this.title_head.setTextColor(titleColor)
+        }
+        this.title_head.show()
+        return this
+    }
+        /***
      * Title Properties For Alert Dialog
      * */
     fun AlertDialog.title(
@@ -65,6 +81,15 @@ class CustomDialog {
         return this
     }
 
+    fun AlertDialog.close(action: (() -> Unit)? = null
+    ): AlertDialog {
+        this.ic_close.show()
+        this.ic_close.setOnClickListener {
+            action?.invoke()
+            dismiss()
+        }
+        return this
+    }
     /***
      * Dialog Background properties For Alert Dialog
      * */
